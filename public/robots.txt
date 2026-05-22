@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /mentions-legales
 
-Sitemap: https://www.sdavocats.fr/sitemap.xml
+Sitemap: https://sd-avocats.vercel.app/sitemap.xml
