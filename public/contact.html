@@ -100,20 +100,15 @@
   .contact-left .secret{margin-top:clamp(36px,4vw,56px);padding-top:24px;border-top:1px solid var(--hair);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:clamp(20px,2.6vw,32px)}
   .contact-left .secret .annot{margin-bottom:8px}
   .contact-left .secret p{margin:0;font-size:14px;line-height:1.6;color:var(--body)}
-  .contact-form{border:1px solid var(--hair-2);background:var(--paper);padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:clamp(18px,2vw,24px);min-width:0}
-  .contact-form .head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:18px;border-bottom:1px solid var(--hair)}
-  .contact-form .head .ttl{font-family:var(--t-display);font-style:italic;font-size:20px;line-height:1}
-  .field{display:flex;flex-direction:column;gap:8px}
-  .field label{font-family:var(--t-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-  .field input,.field textarea,.field select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--hair-2);padding:10px 0;font:inherit;font-family:var(--t-display);font-size:18px;color:var(--ink);transition:border-color .2s}
-  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-bottom-color:var(--accent)}
-  .field textarea{resize:vertical;min-height:96px;font-family:var(--t-body);font-size:15px}
-  .form-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:8px}
-  .form-foot .note{font-family:var(--t-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);max-width:26ch;line-height:1.5}
-  .btn-square{display:inline-flex;align-items:center;gap:12px;padding:16px 22px;background:var(--ink);color:var(--canvas);font-size:13px;letter-spacing:.06em;border:1px solid var(--ink);transition:background .25s,color .25s,border-color .25s}
-  .btn-square:hover{background:var(--accent);border-color:var(--accent)}
-  .btn-square svg{width:16px}
-  .sent{display:none;color:var(--accent);margin:0;font-family:var(--t-mono);font-size:12px;letter-spacing:.06em}
+  .contact-links{border:1px solid var(--hair-2);background:var(--paper);padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:0;min-width:0}
+  .contact-links-head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:18px;border-bottom:1px solid var(--hair);margin-bottom:4px}
+  .contact-links-head .ttl{font-family:var(--t-display);font-style:italic;font-size:20px;line-height:1}
+  .contact-link-row{padding:18px 0;border-bottom:1px solid var(--hair);display:flex;flex-direction:column;gap:10px}
+  .contact-link-row .annot{margin-bottom:0}
+  .contact-link-item{display:inline-flex;align-items:center;gap:12px;font-family:var(--t-display);font-size:clamp(16px,1.4vw,20px);color:var(--ink);transition:color .2s var(--ease)}
+  .contact-link-item:hover{color:var(--accent)}
+  .contact-link-item svg{flex-shrink:0;color:var(--mute)}
+  .contact-note{margin-top:20px;line-height:1.6}
 
   /* OFFICES */
   .offices{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));border:1px solid var(--on-ink-hair)}
@@ -216,48 +211,53 @@
           </div>
           <div>
             <div class="annot">Confidentialité</div>
-            <p>Le simple envoi de ce formulaire ne crée aucun engagement contractuel.</p>
+            <p>Prendre contact ne crée aucun engagement contractuel.</p>
           </div>
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.sent').style.display='block'">
-        <div class="head">
+      <div class="contact-links">
+        <div class="contact-links-head">
           <span class="annot">N° de référence · 2026/01</span>
-          <span class="ttl">Demande de contact</span>
+          <span class="ttl">Prendre contact</span>
         </div>
-        <div class="field">
-          <label for="f-name">Nom &amp; prénom</label>
-          <input id="f-name" type="text" placeholder="Madame, Monsieur…" required>
+        <div class="contact-link-row">
+          <div class="annot">Email général</div>
+          <a href="mailto:contact@sdavocats.fr" class="contact-link-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            contact@sdavocats.fr
+          </a>
         </div>
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input id="f-email" type="email" placeholder="vous@exemple.com" required>
+        <div class="contact-link-row">
+          <div class="annot">Bengu Sulusoglu · Paris</div>
+          <a href="mailto:b.sulusoglu@sdavocats.fr" class="contact-link-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            b.sulusoglu@sdavocats.fr
+          </a>
         </div>
-        <div class="field">
-          <label for="f-subj">Objet</label>
-          <select id="f-subj">
-            <option>Conseil — droit des affaires</option>
-            <option>Contentieux — résolution d'un litige</option>
-            <option>Droit des sociétés — opération</option>
-            <option>Droit du travail</option>
-            <option>Mobilité internationale</option>
-            <option>Autre demande</option>
-          </select>
+        <div class="contact-link-row">
+          <div class="annot">Antonine Darricau · Rennes</div>
+          <a href="mailto:a.darricau@sdavocats.fr" class="contact-link-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            a.darricau@sdavocats.fr
+          </a>
         </div>
-        <div class="field">
-          <label for="f-msg">Message</label>
-          <textarea id="f-msg" placeholder="Quelques lignes sur le contexte de votre demande." required></textarea>
+        <div class="contact-link-row">
+          <div class="annot">Bureau de Paris</div>
+          <a href="https://maps.google.com/?q=7+rue+Francisque+Sarcey+75116+Paris" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="18" height="18"><path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            7 rue Francisque Sarcey, 75116 Paris
+          </a>
         </div>
-        <div class="form-foot">
-          <span class="note">Traitement conforme au RGPD — finalité strictement limitée à votre demande.</span>
-          <button type="submit" class="btn-square">
-            Envoyer
-            <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
-          </button>
+        <div class="contact-link-row">
+          <div class="annot">Bureau de Rennes</div>
+          <a href="https://maps.google.com/?q=1+rue+Raoul+Ponchon+35000+Rennes" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" width="18" height="18"><path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            1 rue Raoul Ponchon, 35000 Rennes
+          </a>
         </div>
-        <p class="sent annot">— Message reçu. Une réponse vous parviendra sous 48 h ouvrées.</p>
-      </form>
+        <p class="contact-note annot">Toute information transmise reste couverte par le secret professionnel. Réponse sous 48 h ouvrées.</p>
+      </div>
     </div>
   </div>
 </section>
