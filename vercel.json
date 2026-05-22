@@ -1,11 +1,37 @@
 {
   "outputDirectory": "public",
   "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*).html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ],
   "rewrites": [
-    { "source": "/competences",     "destination": "/competences.html" },
-    { "source": "/notre-equipe",    "destination": "/notre-equipe.html" },
-    { "source": "/contact",         "destination": "/contact.html" },
-    { "source": "/mentions-legales","destination": "/mentions-legales.html" },
+    { "source": "/competences",      "destination": "/competences.html" },
+    { "source": "/notre-equipe",     "destination": "/notre-equipe.html" },
+    { "source": "/contact",          "destination": "/contact.html" },
+    { "source": "/mentions-legales", "destination": "/mentions-legales.html" },
     { "source": "/(.*)",             "destination": "/404.html" }
   ]
 }
