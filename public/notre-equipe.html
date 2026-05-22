@@ -60,6 +60,7 @@
   a{color:inherit;text-decoration:none}
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
   ::selection{background:var(--accent);color:var(--canvas)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
   .wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
   .annot{font-family:var(--t-mono);font-size:10.5px;letter-spacing:.08em;color:var(--mute);text-transform:uppercase}
   .on-ink .annot{color:var(--on-ink-mute)}
@@ -151,6 +152,8 @@
   .p-info dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;padding-top:24px;border-top:1px solid var(--hair)}
   .p-info dl dt{font-family:var(--t-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
   .p-info dl dd{margin:0;font-family:var(--t-display);font-size:15px;line-height:1.4}
+  .p-info dl dd a{color:var(--accent);border-bottom:1px solid rgba(181,18,27,.3);transition:border-color .2s}
+  .p-info dl dd a:hover{border-bottom-color:var(--accent)}
   .p-info .link-arrow{display:inline-flex;align-items:center;gap:14px;font-size:13px;letter-spacing:.06em;padding-bottom:6px;border-bottom:1px solid var(--hair-2);transition:gap .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
   .p-info .link-arrow:hover{gap:22px;color:var(--accent);border-bottom-color:var(--accent)}
   .p-info .link-arrow svg{width:16px;height:10px}
@@ -204,18 +207,18 @@
       <span>Avocats</span>
       <span class="mono-tail">aarpi</span>
     </a>
-    <nav class="nav-links">
-      <a href="/competences">Compétences</a>
-      <a href="/notre-equipe" class="active">Notre équipe</a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="/competences" data-en="Expertise">Compétences</a>
+      <a href="/notre-equipe" class="active" data-en="Our team">Notre équipe</a>
       <a href="/contact">Contact</a>
     </nav>
     <div class="nav-tail">
       <div class="lang-switch" role="group" aria-label="Langue">
-        <button type="button" class="active" aria-pressed="true">FR</button>
+        <button type="button" data-lang-btn="fr" class="active" aria-pressed="true">FR</button>
         <span class="sep" aria-hidden="true">·</span>
-        <button type="button" aria-pressed="false">EN</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
       </div>
-      <a href="/contact" class="cta"><span class="dot"></span> Nous joindre</a>
+      <a href="/contact" class="cta"><span class="dot"></span> <span data-en="Contact us">Nous joindre</span></a>
     </div>
   </div>
 </header>
@@ -224,10 +227,13 @@
   <div class="wrap page-hero-inner">
     <div class="col-ref">
       <span class="num">§ 04</span>
-      <span class="label">Les associées</span>
+      <span class="label" data-en="The partners">Les associées</span>
     </div>
-    <h1>Deux associées.<br><em>Un cabinet</em> sans intermédiaire.</h1>
-    <p class="hero-sub">Le choix de l'indépendance et d'une structure à taille humaine répond à une exigence simple : confier chaque dossier au binôme fondateur, sans délégation à des collaborateurs.</p>
+    <h1>
+      <span class="t" lang="fr">Deux associées.<br><em>Un cabinet</em> sans intermédiaire.</span>
+      <span class="t" lang="en" hidden>Two partners.<br><em>A firm</em> with no intermediary.</span>
+    </h1>
+    <p class="hero-sub" data-en="The choice of independence and a human-scale structure stems from a simple requirement: every matter handled by the founding partners, with no delegation to associates.">Le choix de l'indépendance et d'une structure à taille humaine répond à une exigence simple : confier chaque dossier au binôme fondateur, sans délégation à des collaborateurs.</p>
   </div>
 </div>
 
@@ -235,13 +241,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="col-ref">
-        <span class="num">§ 04</span>
-        <span class="label">Associées fondatrices</span>
+        <span class="num">§ 01</span>
+        <span class="label" data-en="Founding partners">Associées fondatrices</span>
       </div>
-      <h2>Le cabinet conseille et défend ceux qui <em>décident</em>.</h2>
+      <h2>
+        <span class="t" lang="fr">Le cabinet conseille et défend ceux qui <em>décident</em>.</span>
+        <span class="t" lang="en" hidden>The firm advises and defends those who <em>decide</em>.</span>
+      </h2>
       <div class="col-meta">
-        <span class="annot lab">Direction · profils</span>
-        <p class="summary">SD Avocats est dirigé par deux associées aux expertises complémentaires, intervenant en France et à l'international.</p>
+        <span class="annot lab" data-en="Leadership · profiles">Direction · profils</span>
+        <p class="summary" data-en="SD Avocats is led by two partners with complementary expertise, operating in France and internationally.">SD Avocats est dirigé par deux associées aux expertises complémentaires, intervenant en France et à l'international.</p>
       </div>
     </div>
 
@@ -253,28 +262,33 @@
       </div>
       <div class="p-info">
         <div>
-          <div class="p-role">Associée fondatrice</div>
-          <h2 class="p-name">Bengu<br><em>Sulusoglu</em></h2>
+          <div class="p-role" data-en="Founding partner">Associée fondatrice</div>
+          <h3 class="p-name">Bengu<br><em>Sulusoglu</em></h3>
         </div>
         <div class="p-bio">
-          <p>Avocate au barreau de Paris, Bengu Sulusoglu est spécialisée en droit des affaires international, droit des sociétés et contentieux commercial. Elle conseille une clientèle d'entreprises françaises et étrangères, d'investisseurs et de dirigeants dans leurs projets de croissance externe, leurs restructurations et leurs litiges.</p>
-          <p>Trilingue français, anglais et turc, elle accompagne particulièrement les entreprises turques et internationales dans leurs implantations et opérations en France.</p>
+          <p data-en="A member of the Paris Bar, Bengu Sulusoglu specialises in international business law, corporate law and commercial litigation. She advises French and foreign companies, investors and executives on their external growth projects, restructurings and disputes.">Avocate au barreau de Paris, Bengu Sulusoglu est spécialisée en droit des affaires international, droit des sociétés et contentieux commercial. Elle conseille une clientèle d'entreprises françaises et étrangères, d'investisseurs et de dirigeants dans leurs projets de croissance externe, leurs restructurations et leurs litiges.</p>
+          <p data-en="Trilingual in French, English and Turkish, she specialises in supporting Turkish and international companies with their establishment and operations in France.">Trilingue français, anglais et turc, elle accompagne particulièrement les entreprises turques et internationales dans leurs implantations et opérations en France.</p>
         </div>
         <dl>
           <div>
-            <dt>Barreau</dt>
+            <dt data-en="Bar">Barreau</dt>
             <dd>Paris</dd>
           </div>
           <div>
-            <dt>Langues</dt>
+            <dt data-en="Languages">Langues</dt>
             <dd>fr · en · tr</dd>
           </div>
           <div>
-            <dt>Domaines</dt>
-            <dd>Affaires · sociétés · mobilité</dd>
+            <dt data-en="Practice areas">Domaines</dt>
+            <dd data-en="Business · corporate · mobility">Affaires · sociétés · mobilité</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:b.sulusoglu@sdavocats.fr">b.sulusoglu@sdavocats.fr</a></dd>
           </div>
         </dl>
-        <a href="/contact" class="link-arrow">Prendre contact
+        <a href="/contact" class="link-arrow">
+          <span data-en="Get in touch">Prendre contact</span>
           <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
         </a>
       </div>
@@ -288,28 +302,33 @@
       </div>
       <div class="p-info">
         <div>
-          <div class="p-role">Associée fondatrice</div>
-          <h2 class="p-name">Antonine<br><em>Darricau</em></h2>
+          <div class="p-role" data-en="Founding partner">Associée fondatrice</div>
+          <h3 class="p-name">Antonine<br><em>Darricau</em></h3>
         </div>
         <div class="p-bio">
-          <p>Avocate au barreau de Rennes, Antonine Darricau est spécialisée en droit du travail, droit social et contentieux prud'homal. Elle assiste les entreprises et les dirigeants dans l'ensemble de leurs problématiques sociales, de la négociation collective à la gestion des ruptures de contrats de travail.</p>
-          <p>Basée à Rennes, elle intervient à l'échelle nationale et accompagne les entreprises installées en Bretagne dans leur développement en France et à l'international.</p>
+          <p data-en="A member of the Rennes Bar, Antonine Darricau specialises in employment law, social law and labour court litigation. She assists businesses and executives across all social law matters, from collective bargaining to the management of employment terminations.">Avocate au barreau de Rennes, Antonine Darricau est spécialisée en droit du travail, droit social et contentieux prud'homal. Elle assiste les entreprises et les dirigeants dans l'ensemble de leurs problématiques sociales, de la négociation collective à la gestion des ruptures de contrats de travail.</p>
+          <p data-en="Based in Rennes, she operates at national level and supports businesses established in Brittany in their development across France and internationally.">Basée à Rennes, elle intervient à l'échelle nationale et accompagne les entreprises installées en Bretagne dans leur développement en France et à l'international.</p>
         </div>
         <dl>
           <div>
-            <dt>Barreau</dt>
+            <dt data-en="Bar">Barreau</dt>
             <dd>Rennes</dd>
           </div>
           <div>
-            <dt>Langues</dt>
+            <dt data-en="Languages">Langues</dt>
             <dd>fr · en · de</dd>
           </div>
           <div>
-            <dt>Domaines</dt>
-            <dd>Travail · social · contentieux</dd>
+            <dt data-en="Practice areas">Domaines</dt>
+            <dd data-en="Employment · social · litigation">Travail · social · contentieux</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:a.darricau@sdavocats.fr">a.darricau@sdavocats.fr</a></dd>
           </div>
         </dl>
-        <a href="/contact" class="link-arrow">Prendre contact
+        <a href="/contact" class="link-arrow">
+          <span data-en="Get in touch">Prendre contact</span>
           <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
         </a>
       </div>
@@ -322,13 +341,16 @@
   <div class="wrap">
     <div class="section-head">
       <div class="col-ref">
-        <span class="num">§ 01</span>
-        <span class="label">Le cabinet</span>
+        <span class="num">§ 02</span>
+        <span class="label" data-en="The firm">Le cabinet</span>
       </div>
-      <h2>Un cabinet indépendant, deux bureaux, une pratique <em>continue</em>.</h2>
+      <h2>
+        <span class="t" lang="fr">Un cabinet indépendant, deux bureaux, une pratique <em>continue</em>.</span>
+        <span class="t" lang="en" hidden>An independent firm, two offices, one <em>continuous</em> practice.</span>
+      </h2>
       <div class="col-meta">
-        <span class="annot lab">Fondation · présentation</span>
-        <p class="summary">Conseil et contentieux pour entreprises, dirigeants et investisseurs — en France et à l'international.</p>
+        <span class="annot lab" data-en="Foundation · overview">Fondation · présentation</span>
+        <p class="summary" data-en="Advisory and litigation for businesses, executives and investors — in France and internationally.">Conseil et contentieux pour entreprises, dirigeants et investisseurs — en France et à l'international.</p>
       </div>
     </div>
     <div class="presentation">
@@ -336,27 +358,27 @@
         <span class="marker"></span>
         <dl>
           <div>
-            <dt class="annot">Forme</dt>
-            <dd>AARPI — association d'avocats à responsabilité professionnelle individuelle</dd>
+            <dt class="annot" data-en="Structure">Forme</dt>
+            <dd data-en="AARPI — a partnership of lawyers with individual professional liability">AARPI — association d'avocats à responsabilité professionnelle individuelle</dd>
           </div>
           <div>
-            <dt class="annot">Implantations</dt>
+            <dt class="annot" data-en="Offices">Implantations</dt>
             <dd>Paris &amp; Rennes</dd>
           </div>
           <div>
-            <dt class="annot">Pratique</dt>
-            <dd>Conseil &amp; contentieux</dd>
+            <dt class="annot" data-en="Practice">Pratique</dt>
+            <dd data-en="Advisory &amp; litigation">Conseil &amp; contentieux</dd>
           </div>
           <div>
-            <dt class="annot">Langues</dt>
+            <dt class="annot" data-en="Languages">Langues</dt>
             <dd>fr · en · de · tr</dd>
           </div>
         </dl>
       </aside>
       <div class="pres-main">
-        <p data-rise="">SD Avocats accompagne ses clients dans leurs projets d'investissement et leurs litiges, avec une approche pragmatique et sur-mesure.</p>
-        <p data-rise="">Le cabinet intervient en conseil en droit des affaires, en droit social et en contentieux complexe, pour une clientèle d'entreprises françaises et internationales, d'investisseurs et de dirigeants.</p>
-        <p data-rise="">Le choix de l'indépendance et d'une structure à taille humaine répond à une exigence simple : confier chaque dossier au binôme d'associées, sans intermédiaire.</p>
+        <p data-en="SD Avocats supports its clients in their investment projects and disputes, with a pragmatic and tailored approach." data-rise="">SD Avocats accompagne ses clients dans leurs projets d'investissement et leurs litiges, avec une approche pragmatique et sur-mesure.</p>
+        <p data-en="The firm operates in corporate law, employment law and complex litigation advisory, for a client base of French and international companies, investors and executives." data-rise="">Le cabinet intervient en conseil en droit des affaires, en droit social et en contentieux complexe, pour une clientèle d'entreprises françaises et internationales, d'investisseurs et de dirigeants.</p>
+        <p data-en="The choice of independence and a human-scale structure stems from a simple requirement: every matter entrusted to the founding partners, with no intermediary." data-rise="">Le choix de l'indépendance et d'une structure à taille humaine répond à une exigence simple : confier chaque dossier au binôme d'associées, sans intermédiaire.</p>
       </div>
     </div>
   </div>
@@ -442,6 +464,34 @@
     });
   }, {threshold:0.12});
   document.querySelectorAll('[data-rise]').forEach(el => io.observe(el));
+
+  (function(){
+    function setLang(lang){
+      document.documentElement.setAttribute('lang', lang);
+      document.querySelectorAll('[data-en]').forEach(el => {
+        if (!el.dataset.fr) el.dataset.fr = el.textContent.trim();
+        el.textContent = lang === 'en' ? el.dataset.en : el.dataset.fr;
+      });
+      document.querySelectorAll('.t').forEach(el => {
+        el.hidden = el.getAttribute('lang') !== lang;
+      });
+      document.querySelectorAll('[data-lang-btn]').forEach(b => {
+        const on = b.dataset.langBtn === lang;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      try { localStorage.setItem('sd-lang', lang); } catch(e){}
+    }
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('[data-lang-btn]');
+      if (!btn) return;
+      e.preventDefault();
+      setLang(btn.dataset.langBtn);
+    });
+    let saved = 'fr';
+    try { saved = localStorage.getItem('sd-lang') || 'fr'; } catch(e){}
+    setLang(saved);
+  })();
 </script>
 </body>
 </html>

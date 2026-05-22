@@ -38,6 +38,7 @@
   a{color:inherit;text-decoration:none}
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
   ::selection{background:var(--accent);color:var(--canvas)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
   .wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
   .annot{font-family:var(--t-mono);font-size:10.5px;letter-spacing:.08em;color:var(--mute);text-transform:uppercase}
   .on-ink .annot{color:var(--on-ink-mute)}
@@ -159,18 +160,18 @@
       <span>Avocats</span>
       <span class="mono-tail">aarpi</span>
     </a>
-    <nav class="nav-links">
-      <a href="/competences" class="active">Compétences</a>
-      <a href="/notre-equipe">Notre équipe</a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="/competences" class="active" data-en="Expertise">Compétences</a>
+      <a href="/notre-equipe" data-en="Our team">Notre équipe</a>
       <a href="/contact">Contact</a>
     </nav>
     <div class="nav-tail">
       <div class="lang-switch" role="group" aria-label="Langue">
-        <button type="button" class="active" aria-pressed="true">FR</button>
+        <button type="button" data-lang-btn="fr" class="active" aria-pressed="true">FR</button>
         <span class="sep" aria-hidden="true">·</span>
-        <button type="button" aria-pressed="false">EN</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
       </div>
-      <a href="/contact" class="cta"><span class="dot"></span> Nous joindre</a>
+      <a href="/contact" class="cta"><span class="dot"></span> <span data-en="Contact us">Nous joindre</span></a>
     </div>
   </div>
 </header>
@@ -179,10 +180,13 @@
   <div class="wrap page-hero-inner">
     <div class="col-ref">
       <span class="num">§ 02</span>
-      <span class="label">Expertises</span>
+      <span class="label" data-en="Practice areas">Expertises</span>
     </div>
-    <h1>Cinq pratiques.<br><em>Une exigence</em> de précision.</h1>
-    <p class="hero-sub">Conseil et contentieux pour entreprises, dirigeants et investisseurs — en France et à l'international. Chaque dossier est traité par les associées fondatrices, sans intermédiaire.</p>
+    <h1>
+      <span class="t" lang="fr">Cinq pratiques.<br><em>Une exigence</em> de précision.</span>
+      <span class="t" lang="en" hidden>Five practice areas.<br><em>A commitment</em> to precision.</span>
+    </h1>
+    <p class="hero-sub" data-en="Advisory and litigation for businesses, executives and investors — in France and internationally. Every matter is handled directly by the founding partners.">Conseil et contentieux pour entreprises, dirigeants et investisseurs — en France et à l'international. Chaque dossier est traité par les associées fondatrices, sans intermédiaire.</p>
   </div>
 </div>
 
@@ -193,17 +197,21 @@
       <article class="expertise" data-rise="">
         <div class="num">i.</div>
         <div class="ttl">
-          <h3>Contentieux<br>&amp; résolution des litiges</h3>
-          <div class="kw">Civil · commercial · sociétés · exécution forcée</div>
+          <h3>
+            <span class="t" lang="fr">Contentieux<br>&amp; résolution des litiges</span>
+            <span class="t" lang="en" hidden>Litigation<br>&amp; dispute resolution</span>
+          </h3>
+          <div class="kw" data-en="Civil · commercial · corporate · enforcement">Civil · commercial · sociétés · exécution forcée</div>
         </div>
         <div class="desc">
-          <p>SD&nbsp;Avocats assiste et représente ses clients en matière de résolution des litiges et de contentieux civils, commerciaux et de droit des sociétés — notamment en cas de conflit entre associés.</p>
-          <p>Le cabinet intervient à toutes les étapes : négociation, transaction, représentation devant les juridictions françaises et procédures d'exécution forcée.</p>
-          <p>SD&nbsp;Avocats accompagne également ses clients dans les procédures de résolution amiable (médiation, conciliation) en alternative à la voie judiciaire.</p>
+          <p data-en="SD Avocats assists and represents its clients in civil, commercial and corporate litigation — including shareholder disputes.">SD&nbsp;Avocats assiste et représente ses clients en matière de résolution des litiges et de contentieux civils, commerciaux et de droit des sociétés — notamment en cas de conflit entre associés.</p>
+          <p data-en="The firm handles every stage: negotiation, settlement, representation before the French courts and enforcement proceedings.">Le cabinet intervient à toutes les étapes : négociation, transaction, représentation devant les juridictions françaises et procédures d'exécution forcée.</p>
+          <p data-en="SD Avocats also supports clients in alternative dispute resolution proceedings (mediation, conciliation) as an alternative to litigation.">SD&nbsp;Avocats accompagne également ses clients dans les procédures de résolution amiable (médiation, conciliation) en alternative à la voie judiciaire.</p>
         </div>
         <div class="go">
-          <span class="annot">Pratique n°&nbsp;01</span>
-          <a href="/contact" class="lk">Nous contacter
+          <span class="annot" data-en="Practice No.&nbsp;01">Pratique n°&nbsp;01</span>
+          <a href="/contact" class="lk">
+            <span data-en="Get in touch">Nous contacter</span>
             <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
           </a>
         </div>
@@ -212,16 +220,17 @@
       <article class="expertise" data-rise="">
         <div class="num">ii.</div>
         <div class="ttl">
-          <h3>Droit commercial</h3>
-          <div class="kw">Contrats · franchise · distribution · sous-traitance</div>
+          <h3 data-en="Commercial law">Droit commercial</h3>
+          <div class="kw" data-en="Contracts · franchise · distribution · subcontracting">Contrats · franchise · distribution · sous-traitance</div>
         </div>
         <div class="desc">
-          <p>Le cabinet assiste ses clients dans la négociation, la rédaction et l'exécution de leurs contrats commerciaux — contrats de distribution, de franchise, d'agence commerciale, de sous-traitance.</p>
-          <p>En cas de litige, SD&nbsp;Avocats défend les intérêts de ses clients devant les juridictions commerciales et dans le cadre des négociations pré-contentieuses.</p>
+          <p data-en="The firm assists clients in the negotiation, drafting and performance of commercial agreements — distribution, franchise, commercial agency, subcontracting.">Le cabinet assiste ses clients dans la négociation, la rédaction et l'exécution de leurs contrats commerciaux — contrats de distribution, de franchise, d'agence commerciale, de sous-traitance.</p>
+          <p data-en="In the event of a dispute, SD Avocats defends its clients' interests before the commercial courts and in pre-litigation negotiations.">En cas de litige, SD&nbsp;Avocats défend les intérêts de ses clients devant les juridictions commerciales et dans le cadre des négociations pré-contentieuses.</p>
         </div>
         <div class="go">
-          <span class="annot">Pratique n°&nbsp;02</span>
-          <a href="/contact" class="lk">Nous contacter
+          <span class="annot" data-en="Practice No.&nbsp;02">Pratique n°&nbsp;02</span>
+          <a href="/contact" class="lk">
+            <span data-en="Get in touch">Nous contacter</span>
             <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
           </a>
         </div>
@@ -230,16 +239,20 @@
       <article class="expertise" data-rise="">
         <div class="num">iii.</div>
         <div class="ttl">
-          <h3>Droit des sociétés<br>&amp; opérations</h3>
-          <div class="kw">M&amp;A · restructuration · gouvernance · pactes d'associés</div>
+          <h3>
+            <span class="t" lang="fr">Droit des sociétés<br>&amp; opérations</span>
+            <span class="t" lang="en" hidden>Corporate law<br>&amp; transactions</span>
+          </h3>
+          <div class="kw" data-en="M&amp;A · restructuring · governance · shareholders' agreements">M&amp;A · restructuration · gouvernance · pactes d'associés</div>
         </div>
         <div class="desc">
-          <p>SD&nbsp;Avocats conseille les associés, investisseurs et dirigeants dans la structuration juridique des opérations : apports, cessions, fusions, constitution de holdings et rédaction de pactes d'actionnaires.</p>
-          <p>Le cabinet intervient également en matière de gouvernance, de documentation juridique des tours de table et d'assemblées générales.</p>
+          <p data-en="SD Avocats advises shareholders, investors and executives on the legal structuring of transactions: contributions, sales, mergers, holding companies and shareholder agreements.">SD&nbsp;Avocats conseille les associés, investisseurs et dirigeants dans la structuration juridique des opérations : apports, cessions, fusions, constitution de holdings et rédaction de pactes d'actionnaires.</p>
+          <p data-en="The firm also handles governance matters, legal documentation for funding rounds and general meetings.">Le cabinet intervient également en matière de gouvernance, de documentation juridique des tours de table et d'assemblées générales.</p>
         </div>
         <div class="go">
-          <span class="annot">Pratique n°&nbsp;03</span>
-          <a href="/contact" class="lk">Nous contacter
+          <span class="annot" data-en="Practice No.&nbsp;03">Pratique n°&nbsp;03</span>
+          <a href="/contact" class="lk">
+            <span data-en="Get in touch">Nous contacter</span>
             <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
           </a>
         </div>
@@ -248,16 +261,17 @@
       <article class="expertise" data-rise="">
         <div class="num">iv.</div>
         <div class="ttl">
-          <h3>Droit du travail</h3>
-          <div class="kw">Individuel · collectif · contrats · ruptures</div>
+          <h3 data-en="Employment law">Droit du travail</h3>
+          <div class="kw" data-en="Individual · collective · contracts · terminations">Individuel · collectif · contrats · ruptures</div>
         </div>
         <div class="desc">
-          <p>SD&nbsp;Avocats conseille et défend les entreprises et les dirigeants en droit du travail individuel et collectif : rédaction et révision de contrats de travail, procédures disciplinaires, licenciements, ruptures conventionnelles collectives et restructurations.</p>
-          <p>Le cabinet accompagne également les relations avec le CSE, la négociation d'accords d'entreprise et la représentation devant le Conseil de prud'hommes.</p>
+          <p data-en="SD Avocats advises and represents businesses and executives in individual and collective employment law: drafting and reviewing employment contracts, disciplinary proceedings, dismissals, collective redundancies and restructurings.">SD&nbsp;Avocats conseille et défend les entreprises et les dirigeants en droit du travail individuel et collectif : rédaction et révision de contrats de travail, procédures disciplinaires, licenciements, ruptures conventionnelles collectives et restructurations.</p>
+          <p data-en="The firm also handles works council relations, collective bargaining and representation before the Labour Court.">Le cabinet accompagne également les relations avec le CSE, la négociation d'accords d'entreprise et la représentation devant le Conseil de prud'hommes.</p>
         </div>
         <div class="go">
-          <span class="annot">Pratique n°&nbsp;04</span>
-          <a href="/contact" class="lk">Nous contacter
+          <span class="annot" data-en="Practice No.&nbsp;04">Pratique n°&nbsp;04</span>
+          <a href="/contact" class="lk">
+            <span data-en="Get in touch">Nous contacter</span>
             <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
           </a>
         </div>
@@ -266,16 +280,17 @@
       <article class="expertise" data-rise="">
         <div class="num">v.</div>
         <div class="ttl">
-          <h3>Mobilité internationale</h3>
-          <div class="kw">Détachement · titres de séjour · directive · expatriés</div>
+          <h3 data-en="International mobility">Mobilité internationale</h3>
+          <div class="kw" data-en="Secondment · residence permits · directive · expatriates">Détachement · titres de séjour · directive · expatriés</div>
         </div>
         <div class="desc">
-          <p>SD&nbsp;Avocats conseille les entreprises et les personnes physiques sur les questions de mobilité internationale : titres de séjour et de travail pour ressortissants étrangers, détachements intra-groupe, application de la directive détachement et régime fiscal spécial des impatriés.</p>
-          <p>Le cabinet travaille en français, anglais, allemand et turc pour accompagner ses clients internationaux dans leurs démarches en France.</p>
+          <p data-en="SD Avocats advises businesses and individuals on international mobility matters: residence and work permits for foreign nationals, intra-group secondments, application of the Posted Workers Directive and the special tax regime for inbound expatriates.">SD&nbsp;Avocats conseille les entreprises et les personnes physiques sur les questions de mobilité internationale : titres de séjour et de travail pour ressortissants étrangers, détachements intra-groupe, application de la directive détachement et régime fiscal spécial des impatriés.</p>
+          <p data-en="The firm works in French, English, German and Turkish to support its international clients in their French proceedings.">Le cabinet travaille en français, anglais, allemand et turc pour accompagner ses clients internationaux dans leurs démarches en France.</p>
         </div>
         <div class="go">
-          <span class="annot">Pratique n°&nbsp;05</span>
-          <a href="/contact" class="lk">Nous contacter
+          <span class="annot" data-en="Practice No.&nbsp;05">Pratique n°&nbsp;05</span>
+          <a href="/contact" class="lk">
+            <span data-en="Get in touch">Nous contacter</span>
             <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
           </a>
         </div>
@@ -290,34 +305,49 @@
     <div class="section-head">
       <div class="col-ref">
         <span class="num">§ 03</span>
-        <span class="label">Approche</span>
+        <span class="label" data-en="Approach">Approche</span>
       </div>
-      <h2>Une méthode pensée pour les dossiers <em>complexes</em>.</h2>
+      <h2>
+        <span class="t" lang="fr">Une méthode pensée pour les dossiers <em>complexes</em>.</span>
+        <span class="t" lang="en" hidden>A method designed for <em>complex</em> matters.</span>
+      </h2>
       <div class="col-meta">
-        <span class="annot lab">Méthode · positionnement</span>
-        <p class="summary">Chaque engagement suit un protocole en quatre temps : conseil en amont, phase pré-contentieuse, procédure judiciaire, suivi sur-mesure.</p>
+        <span class="annot lab" data-en="Method · positioning">Méthode · positionnement</span>
+        <p class="summary" data-en="Each engagement follows a four-step protocol: upstream advisory, pre-litigation phase, judicial proceedings, tailored follow-up.">Chaque engagement suit un protocole en quatre temps : conseil en amont, phase pré-contentieuse, procédure judiciaire, suivi sur-mesure.</p>
       </div>
     </div>
     <div class="approche">
       <div class="pillar" data-rise="">
         <div class="lead-line">Phase 01</div>
-        <h3>Conseil<br>en amont</h3>
-        <p>Anticiper les risques avant qu'ils se matérialisent. Audit juridique, révision contractuelle, structuration de gouvernance.</p>
+        <h3>
+          <span class="t" lang="fr">Conseil<br>en amont</span>
+          <span class="t" lang="en" hidden>Upstream<br>advisory</span>
+        </h3>
+        <p data-en="Anticipating risks before they materialise. Legal audit, contract review, governance structuring.">Anticiper les risques avant qu'ils se matérialisent. Audit juridique, révision contractuelle, structuration de gouvernance.</p>
       </div>
       <div class="pillar" data-rise="">
         <div class="lead-line">Phase 02</div>
-        <h3>Phase<br>pré-contentieuse</h3>
-        <p>Négociation et mises en demeure. Nous maximisons les perspectives de règlement avant toute procédure judiciaire.</p>
+        <h3>
+          <span class="t" lang="fr">Phase<br>pré-contentieuse</span>
+          <span class="t" lang="en" hidden>Pre-litigation<br>phase</span>
+        </h3>
+        <p data-en="Negotiation and formal notices. We maximise settlement prospects before any judicial proceedings.">Négociation et mises en demeure. Nous maximisons les perspectives de règlement avant toute procédure judiciaire.</p>
       </div>
       <div class="pillar" data-rise="">
         <div class="lead-line">Phase 03</div>
-        <h3>Procédure<br>judiciaire</h3>
-        <p>Représentation complète devant les juridictions civiles, commerciales et prud'homales. Chaque écrit rédigé par les associées fondatrices.</p>
+        <h3>
+          <span class="t" lang="fr">Procédure<br>judiciaire</span>
+          <span class="t" lang="en" hidden>Judicial<br>proceedings</span>
+        </h3>
+        <p data-en="Full representation before civil, commercial and labour courts. Every written submission drafted by the founding partners.">Représentation complète devant les juridictions civiles, commerciales et prud'homales. Chaque écrit rédigé par les associées fondatrices.</p>
       </div>
       <div class="pillar" data-rise="">
         <div class="lead-line">Phase 04</div>
-        <h3>Suivi<br>sur-mesure</h3>
-        <p>Après la clôture du dossier, nous assurons l'exécution et la veille préventive. La relation ne s'arrête pas au jugement.</p>
+        <h3>
+          <span class="t" lang="fr">Suivi<br>sur-mesure</span>
+          <span class="t" lang="en" hidden>Tailored<br>follow-up</span>
+        </h3>
+        <p data-en="After the case closes, we ensure enforcement and preventive monitoring. The relationship does not end with the judgment.">Après la clôture du dossier, nous assurons l'exécution et la veille préventive. La relation ne s'arrête pas au jugement.</p>
       </div>
     </div>
   </div>
@@ -403,6 +433,34 @@
     });
   }, {threshold:0.12});
   document.querySelectorAll('[data-rise]').forEach(el => io.observe(el));
+
+  (function(){
+    function setLang(lang){
+      document.documentElement.setAttribute('lang', lang);
+      document.querySelectorAll('[data-en]').forEach(el => {
+        if (!el.dataset.fr) el.dataset.fr = el.textContent.trim();
+        el.textContent = lang === 'en' ? el.dataset.en : el.dataset.fr;
+      });
+      document.querySelectorAll('.t').forEach(el => {
+        el.hidden = el.getAttribute('lang') !== lang;
+      });
+      document.querySelectorAll('[data-lang-btn]').forEach(b => {
+        const on = b.dataset.langBtn === lang;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      try { localStorage.setItem('sd-lang', lang); } catch(e){}
+    }
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('[data-lang-btn]');
+      if (!btn) return;
+      e.preventDefault();
+      setLang(btn.dataset.langBtn);
+    });
+    let saved = 'fr';
+    try { saved = localStorage.getItem('sd-lang') || 'fr'; } catch(e){}
+    setLang(saved);
+  })();
 </script>
 </body>
 </html>

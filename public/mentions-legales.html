@@ -98,7 +98,8 @@
   .legal-section ul li+li{margin-top:.5em}
   .legal-section a{color:var(--accent);border-bottom:1px solid rgba(181,18,27,.3);transition:border-color .2s}
   .legal-section a:hover{border-bottom-color:var(--accent)}
-  .legal-section .ref-block{margin-top:20px;padding:20px;background:var(--canvas-2);border-left:2px solid var(--accent)}
+  .legal-section .ref-block{margin-top:20px;padding:20px;background:var(--canvas-2);border-top:2px solid var(--accent);border-bottom:1px solid var(--hair)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
   .legal-section .ref-block p{font-family:var(--t-mono);font-size:11.5px;letter-spacing:.06em;color:var(--body)}
 
   /* FOOTER */
@@ -129,7 +130,7 @@
       <span>Avocats</span>
       <span class="mono-tail">aarpi</span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Navigation principale">
       <a href="/competences">Compétences</a>
       <a href="/notre-equipe">Notre équipe</a>
       <a href="/contact">Contact</a>
