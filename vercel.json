@@ -5,6 +5,7 @@
     { "source": "/competences",     "destination": "/competences.html" },
     { "source": "/notre-equipe",    "destination": "/notre-equipe.html" },
     { "source": "/contact",         "destination": "/contact.html" },
-    { "source": "/mentions-legales","destination": "/mentions-legales.html" }
+    { "source": "/mentions-legales","destination": "/mentions-legales.html" },
+    { "source": "/(.*)",             "destination": "/404.html" }
   ]
 }
