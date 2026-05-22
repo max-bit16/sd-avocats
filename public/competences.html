@@ -54,9 +54,13 @@
   .nav-links{display:flex;flex-wrap:wrap;gap:clamp(14px,2.2vw,36px);font-size:13px;order:3;flex-basis:100%;padding-top:4px}
   @media(min-width:1080px){.nav-links{order:0;flex-basis:auto;padding-top:0;justify-content:center;flex:1}}
   .nav-links a{opacity:.8;transition:opacity .2s;position:relative;padding:4px 0}
-  .nav-links a:hover,.nav-links a.active{opacity:1}
+  .nav-links a.active{opacity:1}
   .nav-links a::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
-  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+  .nav-links a.active::after{transform:scaleX(1)}
+  @media(hover:hover)and(pointer:fine){
+    .nav-links a:hover{opacity:1}
+    .nav-links a:hover::after{transform:scaleX(1)}
+  }
   .nav-tail{display:flex;align-items:center;gap:clamp(12px,2vw,22px);font-size:13px}
   .nav-tail .cta{display:inline-flex;align-items:center;gap:10px;border-left:1px solid currentColor;padding-left:22px;letter-spacing:.04em}
   .nav-tail .cta .dot{width:7px;height:7px;background:var(--accent);border-radius:50%}
@@ -100,8 +104,8 @@
   /* EXPERTISES */
   .expertises{border-top:1px solid var(--on-ink-hair)}
   .expertise{display:grid;grid-template-columns:minmax(48px,80px) minmax(0,1fr) minmax(0,1.4fr) minmax(120px,160px);gap:clamp(20px,3vw,48px);align-items:start;padding:clamp(32px,4.4vw,56px) 0;border-bottom:1px solid var(--on-ink-hair);position:relative;transition:background .3s var(--ease)}
-  .expertise::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-  .expertise:hover::before{transform:scaleX(1)}
+  .expertise::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 250ms var(--ease)}
+  @media(hover:hover)and(pointer:fine){.expertise:hover::before{transform:scaleX(1)}}
   .expertise .num{font-family:var(--t-display);font-style:italic;font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1;color:var(--accent-soft);letter-spacing:-.01em}
   .expertise .ttl{display:flex;flex-direction:column;gap:14px}
   .expertise .ttl h3{font-family:var(--t-display);font-weight:400;font-size:clamp(24px,2.3vw,32px);line-height:1.12;letter-spacing:-.008em;margin:0;color:var(--on-ink)}
@@ -111,8 +115,12 @@
   .expertise .desc p+p{margin-top:.8em}
   .expertise .go{justify-self:end;align-self:start;padding-top:6px;display:flex;flex-direction:column;gap:8px;text-align:right}
   .expertise .go .annot{color:var(--on-ink-mute)}
-  .expertise .go .lk{display:inline-flex;align-items:center;gap:10px;justify-self:end;margin-left:auto;font-size:13px;letter-spacing:.04em;border-bottom:1px solid var(--on-ink-hair-2);padding-bottom:4px;transition:gap .25s var(--ease),color .25s var(--ease);color:var(--on-ink)}
-  .expertise:hover .go .lk{color:var(--accent-soft);gap:16px}
+  .expertise .go .lk{display:inline-flex;align-items:center;gap:10px;justify-self:end;margin-left:auto;font-size:13px;letter-spacing:.04em;border-bottom:1px solid var(--on-ink-hair-2);padding-bottom:4px;transition:color .25s var(--ease);color:var(--on-ink)}
+  .expertise .go .lk svg{transition:transform 200ms var(--ease)}
+  @media(hover:hover)and(pointer:fine){
+    .expertise:hover .go .lk{color:var(--accent-soft)}
+    .expertise:hover .go .lk svg{transform:translateX(6px)}
+  }
   @media(max-width:980px){
     .expertise{grid-template-columns:48px minmax(0,1fr);gap:16px 24px}
     .expertise .desc{grid-column:2/3}
@@ -147,8 +155,9 @@
     .foot .colophon{grid-column:1/-1}
   }
 
-  [data-rise]{opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  [data-rise]{opacity:0;transform:translateY(16px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
   [data-rise].in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){[data-rise]{transition:none;transform:none;opacity:1}}
 </style>
 </head>
 <body>
