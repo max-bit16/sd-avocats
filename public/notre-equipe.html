@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notre équipe — SD Avocats · Cabinet d'avocats Paris &amp; Rennes</title>
+<meta name="description" content="Bengu Sulusoglu et Antonine Darricau, associées fondatrices de SD Avocats. Cabinet indépendant pluridisciplinaire, Paris 16e et Rennes centre.">
+<link rel="canonical" href="https://www.sdavocats.fr/notre-equipe">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#F2EDE3;--canvas-2:#E7E0D0;--paper:#FAF6EC;
+    --ink:#161310;--ink-2:#1F1B17;--ink-3:#2A251E;
+    --body:#5A5249;--mute:#948B7C;
+    --hair:rgba(22,19,16,.14);--hair-2:rgba(22,19,16,.28);
+    --on-ink:#F2EDE3;--on-ink-mute:#ACA597;
+    --on-ink-hair:rgba(242,237,227,.16);--on-ink-hair-2:rgba(242,237,227,.32);
+    --accent:#B5121B;--accent-soft:#C44930;
+    --container:1480px;--gutter:clamp(20px,4vw,56px);
+    --band-pad:clamp(64px,9vw,140px);--col-gap:clamp(24px,4vw,56px);
+    --t-display:'Spectral','Times New Roman',serif;
+    --t-body:'Manrope','Helvetica Neue',Arial,sans-serif;
+    --t-mono:'JetBrains Mono',ui-monospace,monospace;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--t-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-feature-settings:'ss01','kern','liga'}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+  ::selection{background:var(--accent);color:var(--canvas)}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+  .annot{font-family:var(--t-mono);font-size:10.5px;letter-spacing:.08em;color:var(--mute);text-transform:uppercase}
+  .on-ink .annot{color:var(--on-ink-mute)}
+
+  /* NAV */
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;color:var(--on-ink);transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease);border-bottom:1px solid transparent}
+  .nav .inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:clamp(20px,3.4vw,48px);row-gap:12px;padding:clamp(14px,1.6vw,22px) 0}
+  .nav.solid{background:rgba(22,19,16,.92);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-color:var(--on-ink-hair)}
+  .nav.light{color:var(--ink)}
+  .nav.light.solid{background:rgba(242,237,227,.92);border-color:var(--hair)}
+  .brand{display:flex;align-items:center;gap:14px;font-family:var(--t-display);font-size:16px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+  .brand .mono-tail{font-family:var(--t-mono);font-size:10.5px;letter-spacing:.14em;font-weight:400;opacity:.55;padding-left:6px;border-left:1px solid currentColor;text-transform:none}
+  .nav-links{display:flex;flex-wrap:wrap;gap:clamp(14px,2.2vw,36px);font-size:13px;order:3;flex-basis:100%;padding-top:4px}
+  @media(min-width:1080px){.nav-links{order:0;flex-basis:auto;padding-top:0;justify-content:center;flex:1}}
+  .nav-links a{opacity:.8;transition:opacity .2s;position:relative;padding:4px 0}
+  .nav-links a:hover,.nav-links a.active{opacity:1}
+  .nav-links a::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+  .nav-tail{display:flex;align-items:center;gap:clamp(12px,2vw,22px);font-size:13px}
+  .nav-tail .cta{display:inline-flex;align-items:center;gap:10px;border-left:1px solid currentColor;padding-left:22px;letter-spacing:.04em}
+  .nav-tail .cta .dot{width:7px;height:7px;background:var(--accent);border-radius:50%}
+  .nav-tail .cta:hover{color:var(--accent)}
+  .lang-switch{display:inline-flex;align-items:center;font-family:var(--t-mono)}
+  .lang-switch button{padding:4px 6px;cursor:pointer;color:inherit;opacity:.55;font-family:var(--t-mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;position:relative;transition:opacity .2s var(--ease)}
+  .lang-switch button:hover{opacity:.9}
+  .lang-switch button.active{opacity:1;color:var(--accent)}
+  .lang-switch button.active::after{content:"";position:absolute;left:6px;right:6px;bottom:-3px;height:1px;background:var(--accent)}
+  .lang-switch .sep{opacity:.35;padding:0 2px;font-size:11px}
+
+  /* PAGE HERO */
+  .page-hero{background:var(--ink);color:var(--on-ink);padding:clamp(120px,14vw,180px) 0 clamp(64px,8vw,112px)}
+  .page-hero-inner{display:flex;flex-direction:column;gap:clamp(28px,3.6vw,48px)}
+  .page-hero .col-ref{display:flex;flex-direction:column;gap:8px}
+  .page-hero .col-ref .num{font-family:var(--t-display);font-style:italic;font-weight:400;font-size:clamp(42px,4.2vw,56px);line-height:1;letter-spacing:-.02em;color:var(--accent)}
+  .page-hero .col-ref .label{font-family:var(--t-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on-ink-mute)}
+  .page-hero h1{font-family:var(--t-display);font-weight:350;font-size:clamp(34px,5vw,70px);line-height:1.06;letter-spacing:-.018em;margin:0;color:var(--on-ink);max-width:22ch}
+  .page-hero h1 em{font-style:italic;color:var(--accent-soft)}
+  .page-hero .hero-sub{font-size:clamp(15px,1.2vw,17px);line-height:1.55;color:var(--on-ink);opacity:.75;font-weight:300;max-width:52ch;margin:0}
+
+  /* SECTIONS */
+  section.band{padding:var(--band-pad) 0;position:relative}
+  section.band.dark{background:var(--ink);color:var(--on-ink)}
+  section.band.tint{background:var(--canvas-2)}
+  section.band.paper{background:var(--paper)}
+  .section-head{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(28px,4vw,56px);padding-bottom:clamp(32px,4vw,56px);margin-bottom:clamp(40px,5vw,72px);border-bottom:1px solid var(--hair);align-items:end}
+  .on-ink .section-head{border-color:var(--on-ink-hair)}
+  .section-head .col-ref{display:flex;flex-direction:column;gap:8px}
+  .section-head .col-ref .num{font-family:var(--t-display);font-size:clamp(42px,4.2vw,56px);line-height:1;letter-spacing:-.02em;color:var(--accent);font-style:italic;font-weight:400}
+  .section-head .col-ref .label{font-family:var(--t-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+  .on-ink .section-head .col-ref .label{color:var(--on-ink-mute)}
+  .section-head h2{font-family:var(--t-display);font-weight:400;font-size:clamp(32px,3.4vw,50px);line-height:1.08;letter-spacing:-.012em;margin:0;max-width:22ch}
+  .section-head h2 em{font-style:italic;color:var(--accent)}
+  .on-ink .section-head h2{color:var(--on-ink)}
+  .on-ink .section-head h2 em{color:var(--accent-soft)}
+  .section-head .col-meta{display:flex;flex-direction:column;gap:12px;align-self:end}
+  .section-head .col-meta .annot.lab{color:var(--accent)}
+  .section-head .col-meta .summary{font-family:var(--t-display);font-style:italic;font-size:17px;line-height:1.4;color:var(--ink-2)}
+  .on-ink .section-head .col-meta .summary{color:var(--on-ink)}
+
+  /* PARTNERS */
+  .partner{
+    display:grid;grid-template-columns:minmax(240px,440px) minmax(0,1fr);
+    column-gap:clamp(32px,5vw,80px);padding:clamp(48px,6vw,96px) 0;
+    border-bottom:1px solid var(--hair);
+  }
+  .partner.flip{grid-template-columns:minmax(0,1fr) minmax(240px,440px)}
+  .partner.flip .p-portrait{order:2}
+  .partner.flip .p-info{order:1}
+  .p-portrait{
+    aspect-ratio:4/5;background:var(--canvas-2);overflow:hidden;position:relative;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .p-portrait .pp-mid{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    pointer-events:none;
+  }
+  .p-portrait .pp-mid .mono-name{
+    font-family:var(--t-display);font-style:italic;font-weight:300;
+    font-size:clamp(64px,8vw,108px);color:rgba(22,19,16,.08);
+    letter-spacing:-.04em;line-height:1;white-space:nowrap;
+  }
+  .p-info{display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,3vw,40px);min-width:0}
+  .p-info .p-name{font-family:var(--t-display);font-weight:400;font-size:clamp(28px,3.4vw,48px);line-height:1.1;letter-spacing:-.015em;margin:0}
+  .p-info .p-name em{font-style:italic;color:var(--accent)}
+  .p-info .p-role{font-family:var(--t-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+  .p-info .p-bio p{margin:0;font-size:clamp(15px,1.1vw,17px);line-height:1.65;color:var(--body)}
+  .p-info .p-bio p+p{margin-top:1em}
+  .p-info dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;padding-top:24px;border-top:1px solid var(--hair)}
+  .p-info dl dt{font-family:var(--t-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+  .p-info dl dd{margin:0;font-family:var(--t-display);font-size:15px;line-height:1.4}
+  .p-info .link-arrow{display:inline-flex;align-items:center;gap:14px;font-size:13px;letter-spacing:.06em;padding-bottom:6px;border-bottom:1px solid var(--hair-2);transition:gap .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
+  .p-info .link-arrow:hover{gap:22px;color:var(--accent);border-bottom-color:var(--accent)}
+  .p-info .link-arrow svg{width:16px;height:10px}
+  @media(max-width:860px){
+    .partner,.partner.flip{grid-template-columns:1fr}
+    .partner.flip .p-portrait,.partner.flip .p-info{order:0}
+  }
+
+  /* PRÉSENTATION SIDEBAR */
+  .presentation{display:grid;grid-template-columns:minmax(160px,200px) minmax(0,1.4fr) minmax(0,1fr);gap:var(--col-gap)}
+  .pres-sidebar{display:flex;flex-direction:column;gap:28px;align-self:start}
+  @media(min-width:1080px){.pres-sidebar{position:sticky;top:96px}}
+  .pres-sidebar .marker{height:4px;width:56px;background:var(--accent)}
+  .pres-sidebar dl{margin:0;display:flex;flex-direction:column;gap:18px}
+  .pres-sidebar dt{margin-bottom:4px}
+  .pres-sidebar dd{margin:0;font-family:var(--t-display);font-size:16px;line-height:1.4}
+  .pres-main p{font-family:var(--t-display);font-weight:350;font-size:clamp(18px,1.6vw,22px);line-height:1.45;color:var(--ink);margin:0;max-width:36ch}
+  .pres-main p+p{margin-top:1.2em}
+  @media(max-width:860px){
+    .presentation{grid-template-columns:1fr}
+  }
+
+  /* FOOTER */
+  footer.foot{background:var(--ink);color:var(--on-ink);padding:clamp(48px,6vw,80px) 0 36px}
+  .foot-top{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(140px,1fr));gap:clamp(28px,4vw,56px);padding-bottom:clamp(32px,4vw,56px);border-bottom:1px solid var(--on-ink-hair)}
+  .foot .colophon{max-width:36ch}
+  .foot .colophon .mono-line{margin-top:14px;font-family:var(--t-mono);font-size:11.5px;letter-spacing:.08em;color:var(--on-ink-mute);line-height:1.65}
+  .foot h5{font-family:var(--t-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--on-ink-mute);margin:0 0 18px;font-weight:500}
+  .foot ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  .foot ul a{font-size:14px;opacity:.82;transition:color .2s,opacity .2s}
+  .foot ul a:hover{opacity:1;color:var(--accent-soft)}
+  .foot-large{padding:40px 0;font-family:var(--t-display);font-weight:300;font-style:italic;font-size:clamp(48px,7.4vw,132px);line-height:1;letter-spacing:-.04em;color:rgba(242,237,227,.06);text-align:center;border-bottom:1px solid var(--on-ink-hair)}
+  .foot-bottom{margin-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:clamp(12px,2vw,24px);font-family:var(--t-mono);font-size:11px;letter-spacing:.08em;color:var(--on-ink-mute)}
+  .foot-bottom .legal{display:flex;gap:32px;flex-wrap:wrap}
+  .foot-bottom .legal a:hover{color:var(--accent-soft)}
+  @media(max-width:720px){
+    .foot-top{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .foot .colophon{grid-column:1/-1}
+  }
+
+  [data-rise]{opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  [data-rise].in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap inner">
+    <a href="/" class="brand">
+      <span style="font-family:var(--t-display);font-style:italic;font-weight:400;color:var(--accent)">SD</span>
+      <span>Avocats</span>
+      <span class="mono-tail">aarpi</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/competences">Compétences</a>
+      <a href="/notre-equipe" class="active">Notre équipe</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="nav-tail">
+      <div class="lang-switch" role="group" aria-label="Langue">
+        <button type="button" class="active" aria-pressed="true">FR</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" aria-pressed="false">EN</button>
+      </div>
+      <a href="/contact" class="cta"><span class="dot"></span> Nous joindre</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero on-ink" id="top">
+  <div class="wrap page-hero-inner">
+    <div class="col-ref">
+      <span class="num">§ 04</span>
+      <span class="label">Les associées</span>
+    </div>
+    <h1>Deux associées.<br><em>Un cabinet</em> sans intermédiaire.</h1>
+    <p class="hero-sub">Le choix de l'indépendance et d'une structure à taille humaine répond à une exigence simple : confier chaque dossier au binôme fondateur, sans délégation à des collaborateurs.</p>
+  </div>
+</div>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="col-ref">
+        <span class="num">§ 04</span>
+        <span class="label">Associées fondatrices</span>
+      </div>
+      <h2>Le cabinet conseille et défend ceux qui <em>décident</em>.</h2>
+      <div class="col-meta">
+        <span class="annot lab">Direction · profils</span>
+        <p class="summary">SD Avocats est dirigé par deux associées aux expertises complémentaires, intervenant en France et à l'international.</p>
+      </div>
+    </div>
+
+    <div class="partner" data-rise="">
+      <div class="p-portrait">
+        <div class="pp-mid">
+          <span class="mono-name">BS</span>
+        </div>
+      </div>
+      <div class="p-info">
+        <div>
+          <div class="p-role">Associée fondatrice</div>
+          <h2 class="p-name">Bengu<br><em>Sulusoglu</em></h2>
+        </div>
+        <div class="p-bio">
+          <p>Avocate au barreau de Paris, Bengu Sulusoglu est spécialisée en droit des affaires international, droit des sociétés et contentieux commercial. Elle conseille une clientèle d'entreprises françaises et étrangères, d'investisseurs et de dirigeants dans leurs projets de croissance externe, leurs restructurations et leurs litiges.</p>
+          <p>Trilingue français, anglais et turc, elle accompagne particulièrement les entreprises turques et internationales dans leurs implantations et opérations en France.</p>
+        </div>
+        <dl>
+          <div>
+            <dt>Barreau</dt>
+            <dd>Paris</dd>
+          </div>
+          <div>
+            <dt>Langues</dt>
+            <dd>fr · en · tr</dd>
+          </div>
+          <div>
+            <dt>Domaines</dt>
+            <dd>Affaires · sociétés · mobilité</dd>
+          </div>
+        </dl>
+        <a href="/contact" class="link-arrow">Prendre contact
+          <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="partner flip" data-rise="">
+      <div class="p-portrait">
+        <div class="pp-mid">
+          <span class="mono-name">AD</span>
+        </div>
+      </div>
+      <div class="p-info">
+        <div>
+          <div class="p-role">Associée fondatrice</div>
+          <h2 class="p-name">Antonine<br><em>Darricau</em></h2>
+        </div>
+        <div class="p-bio">
+          <p>Avocate au barreau de Rennes, Antonine Darricau est spécialisée en droit du travail, droit social et contentieux prud'homal. Elle assiste les entreprises et les dirigeants dans l'ensemble de leurs problématiques sociales, de la négociation collective à la gestion des ruptures de contrats de travail.</p>
+          <p>Basée à Rennes, elle intervient à l'échelle nationale et accompagne les entreprises installées en Bretagne dans leur développement en France et à l'international.</p>
+        </div>
+        <dl>
+          <div>
+            <dt>Barreau</dt>
+            <dd>Rennes</dd>
+          </div>
+          <div>
+            <dt>Langues</dt>
+            <dd>fr · en · de</dd>
+          </div>
+          <div>
+            <dt>Domaines</dt>
+            <dd>Travail · social · contentieux</dd>
+          </div>
+        </dl>
+        <a href="/contact" class="link-arrow">Prendre contact
+          <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="band tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="col-ref">
+        <span class="num">§ 01</span>
+        <span class="label">Le cabinet</span>
+      </div>
+      <h2>Un cabinet indépendant, deux bureaux, une pratique <em>continue</em>.</h2>
+      <div class="col-meta">
+        <span class="annot lab">Fondation · présentation</span>
+        <p class="summary">Conseil et contentieux pour entreprises, dirigeants et investisseurs — en France et à l'international.</p>
+      </div>
+    </div>
+    <div class="presentation">
+      <aside class="pres-sidebar" data-rise="">
+        <span class="marker"></span>
+        <dl>
+          <div>
+            <dt class="annot">Forme</dt>
+            <dd>AARPI — association d'avocats à responsabilité professionnelle individuelle</dd>
+          </div>
+          <div>
+            <dt class="annot">Implantations</dt>
+            <dd>Paris &amp; Rennes</dd>
+          </div>
+          <div>
+            <dt class="annot">Pratique</dt>
+            <dd>Conseil &amp; contentieux</dd>
+          </div>
+          <div>
+            <dt class="annot">Langues</dt>
+            <dd>fr · en · de · tr</dd>
+          </div>
+        </dl>
+      </aside>
+      <div class="pres-main">
+        <p data-rise="">SD Avocats accompagne ses clients dans leurs projets d'investissement et leurs litiges, avec une approche pragmatique et sur-mesure.</p>
+        <p data-rise="">Le cabinet intervient en conseil en droit des affaires, en droit social et en contentieux complexe, pour une clientèle d'entreprises françaises et internationales, d'investisseurs et de dirigeants.</p>
+        <p data-rise="">Le choix de l'indépendance et d'une structure à taille humaine répond à une exigence simple : confier chaque dossier au binôme d'associées, sans intermédiaire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot on-ink">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="colophon">
+        <div class="brand" style="font-size:15px;color:var(--on-ink)">
+          <span style="font-family:var(--t-display);font-style:italic;color:var(--accent)">SD</span>
+          <span>Avocats</span>
+          <span class="mono-tail" style="border-color:var(--on-ink-hair-2);color:var(--on-ink-mute)">aarpi</span>
+        </div>
+        <div class="mono-line">
+          7 rue Francisque Sarcey, 75116 Paris<br>
+          1 rue Raoul Ponchon, 35000 Rennes<br>
+          contact@sdavocats.fr
+        </div>
+      </div>
+      <div>
+        <h5>Compétences</h5>
+        <ul>
+          <li><a href="/competences">Contentieux</a></li>
+          <li><a href="/competences">Droit commercial</a></li>
+          <li><a href="/competences">Droit des sociétés</a></li>
+          <li><a href="/competences">Droit du travail</a></li>
+          <li><a href="/competences">Mobilité internationale</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Cabinet</h5>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/notre-equipe">Notre équipe</a></li>
+          <li><a href="/competences">Compétences</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:contact@sdavocats.fr">contact@sdavocats.fr</a></li>
+          <li><a href="/contact">Formulaire</a></li>
+          <li><a href="/contact">Paris &amp; Rennes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-large">SD Avocats</div>
+    <div class="foot-bottom">
+      <span>© SD Avocats AARPI · 2026 — Tous droits réservés.</span>
+      <div class="legal">
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/mentions-legales">Données personnelles</a>
+        <a href="/mentions-legales">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (y > 40) nav.classList.add('solid'); else nav.classList.remove('solid');
+    const sections = document.querySelectorAll('.page-hero, section.band, footer.foot');
+    let cur = null;
+    sections.forEach(s => {
+      const r = s.getBoundingClientRect();
+      if (r.top <= 80 && r.bottom > 80) cur = s;
+    });
+    if (cur && (cur.classList.contains('dark') || cur.classList.contains('page-hero'))) {
+      nav.classList.remove('light');
+    } else {
+      nav.classList.add('light');
+    }
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('[data-rise]').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
